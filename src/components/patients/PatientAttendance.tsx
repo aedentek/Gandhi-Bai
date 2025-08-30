@@ -43,7 +43,7 @@ const PatientAttendance: React.FC = () => {
   const [attendanceRecords, setAttendanceRecords] = useState<PatientAttendance[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredPatients, setFilteredPatients] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   // Month and year state for filtering
   const months = [

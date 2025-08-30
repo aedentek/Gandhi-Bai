@@ -23,11 +23,12 @@ const createTableQuery = `
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
 `;
 
-// Initialize table
+// Initialize table (optional - only if user has CREATE privileges)
 db.execute(createTableQuery).then(() => {
-  console.log('🧪 Test reports table ready');
+  console.log('✅ Test reports table ready');
 }).catch(err => {
-  console.log('⚠️ Test reports table setup:', err.message);
+  console.log('ℹ️ Test reports table setup skipped:', err.message.split('\n')[0]);
+  // Continue without failing - table might already exist or user lacks privileges
 });
 
 // GET all test reports

@@ -35,9 +35,11 @@ export default defineConfig(({ mode }) => ({
         main: path.resolve(__dirname, 'index.html')
       },
       external: (id) => {
-        // Exclude test files from production build
-        return id.includes('test-') || 
-               id.includes('debug-') || 
+        // Exclude specific test files from production build, but NOT lucide-react icons or pages
+        if (id.includes('lucide-react') || id.includes('src/pages/')) {
+          return false; // Don't exclude lucide-react icons or page components
+        }
+        return id.includes('debug-') || 
                id.includes('upload-test') ||
                id.includes('quick-test') ||
                id.includes('direct-api-test') ||
