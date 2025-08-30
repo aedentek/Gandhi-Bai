@@ -21,7 +21,9 @@
     "server:perfect": "node server/perfect-server.js",
     "server:watch": "nodemon server/perfect-server.js",
     
-    "start": "node server/perfect-server.js",
+    "start": "node smart-server-start.js",
+    "start:perfect": "node server/perfect-server.js",
+    "start:standard": "node server/index.js",
     "start:dev": "concurrently \"npm run server:perfect\" \"npm run dev:fast\"",
     "start:frontend": "vite preview --port $PORT --host 0.0.0.0",
     
@@ -80,7 +82,9 @@
     "dotenv": "^17.2.1",
     "embla-carousel-react": "^8.3.0",
     "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
     "form-data": "^4.0.4",
+    "helmet": "^7.1.0",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.462.0",
     "multer": "^2.0.2",
