@@ -40,7 +40,7 @@ export const getPatientPhotoUrl = (photoPath: string): string => {
   
   // If path already starts with Photos/, construct full URL to backend
   if (cleanPath.startsWith('Photos/')) {
-    const baseUrl = import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:4000';
+    const baseUrl = 'https://gandhi-bai.onrender.com';
     // Add aggressive cache buster to force reload with timestamp and random value
     const timestamp = Date.now();
     const random = Math.random().toString(36).substring(7);
@@ -50,7 +50,7 @@ export const getPatientPhotoUrl = (photoPath: string): string => {
   
   // If path starts with /Photos/, construct full URL to backend  
   if (cleanPath.startsWith('/Photos/')) {
-    const baseUrl = import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:4000';
+    const baseUrl = 'https://gandhi-bai.onrender.com';
     const timestamp = Date.now();
     const random = Math.random().toString(36).substring(7);
     const cacheBuster = `?t=${timestamp}&r=${random}`;
@@ -59,7 +59,7 @@ export const getPatientPhotoUrl = (photoPath: string): string => {
   
   // Handle backend file paths
   if (cleanPath.startsWith('/uploads/')) {
-    const baseUrl = import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:4000';
+    const baseUrl = 'https://gandhi-bai.onrender.com';
     const timestamp = Date.now();
     const random = Math.random().toString(36).substring(7);
     const cacheBuster = `?t=${timestamp}&r=${random}`;
@@ -72,7 +72,7 @@ export const getPatientPhotoUrl = (photoPath: string): string => {
     cleanPath = `/${cleanPath}`;
   }
   
-  const baseUrl = import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:4000';
+  const baseUrl = 'https://gandhi-bai.onrender.com';
   const timestamp = Date.now();
   const random = Math.random().toString(36).substring(7);
   const cacheBuster = `?t=${timestamp}&r=${random}`;

@@ -10,12 +10,12 @@
 
 // Main backend server configuration
 export const API_CONFIG = {
-  // Backend server (where your Hostinger database is connected)
-  BACKEND_URL: import.meta.env.VITE_API_URL.replace(/\/api$/, '') || 'http://localhost:4000',
-  BACKEND_API: import.meta.env.VITE_API_URL || 'http://localhost:4000/api',
+  // Backend server (where your Hostinger database is connected) - PRODUCTION HARDCODED
+  BACKEND_URL: 'https://gandhi-bai.onrender.com',
+  BACKEND_API: 'https://gandhi-bai.onrender.com/api',
   
-  // Frontend development server
-  FRONTEND_URL: import.meta.env.VITE_BASE_URL || 'http://localhost:8080',
+  // Frontend production URL
+  FRONTEND_URL: 'https://crm.gandhibaideaddictioncenter.com',
   
   // Request timeout
   TIMEOUT: 10000,
